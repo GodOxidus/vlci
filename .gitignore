@@ -148,6 +148,9 @@ tests_*.cmake
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
 
+### Catch2 ###
+tests/.libs/Catch2
+
 ### VisualStudioCode ###
 .vscode/*
 
