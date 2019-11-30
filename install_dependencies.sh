@@ -1,10 +1,7 @@
 #!/bin/sh
 #install catch2
 
-git submodule update --recursive
+git submodule update --init --recursive
 cd ./tests/.libs/Catch2
 mkdir build
-ls -a
-
-cmake -Bbuild -H. -DBUILD_TESTING=OFF
-sudo cmake --build build/ --target install
+ls .. -l
