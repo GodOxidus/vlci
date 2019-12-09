@@ -11,4 +11,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: configure
-      run: ./install_dependencies.sh
+      run: cmake . --DENABLE_TESTING=ON --DGENERATE_DOCS=OFF
