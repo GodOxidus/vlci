@@ -11,4 +11,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
     - name: configure
-      run: cmake . --DENABLE_TESTING=ON --DGENERATE_DOCS=OFF
+      run: cmake --DENABLE_TESTING=ON --DGENERATE_DOCS=OFF .
