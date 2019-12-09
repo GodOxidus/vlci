@@ -6,7 +6,7 @@ find_package(Catch2)
 
 if (NOT Catch2_FOUND)
     message(STATUS "catch2 from subdir")
-    add_subdirectory("${PROJECT_SOURCE_DIR}/tests/.libs/Catch2)
+    add_subdirectory("${PROJECT_SOURCE_DIR}/tests/.libs/Catch2")
 endif()
 
 add_executable(tests "tests.cpp" "lexer_tests.cpp")
