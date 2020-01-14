@@ -6,9 +6,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: 'Dockerfile'
     
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: configure
-      run: cmake --DENABLE_TESTING=ON --DGENERATE_DOCS=OFF . 
