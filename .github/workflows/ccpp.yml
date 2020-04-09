@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install catch2
+      run: sudo apt install catch cmake
+    - name: configure
+      run: cmake --DENABLE_TESTING=ON  .
+    - name: build
+      run: cmake --build .
+    - name: test
+      run: ctest .
