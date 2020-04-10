@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag vlci:$(date +%s) && docker run vlci
+      run: | 
+        docker build . --file Dockerfile --tag vlci
+        docker run vlci
