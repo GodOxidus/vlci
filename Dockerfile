@@ -11,6 +11,6 @@ RUN git clone https://github.com/catchorg/Catch2.git . \
 COPY . /app
 
 WORKDIR /app/build
-RUN cmake .. -DENABLE_TESTING=ON && cmake --build .
+RUN cmake --DGENERATE_DOCS=OFF --DENABLE_TESTING=OFF .. && cmake --build .
 
 CMD [ "ctest", "." ]
