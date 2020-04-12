@@ -14,13 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - name: Catch2
+      working-directory: ./tests/.libs/Catch2
       run: |
-        git clone https://github.com/catchorg/Catch2.git
-        cd Catch2
         cmake -Bbuild -H. -DBUILD_TESTING=OFF
         sudo cmake --build build/ --target install
-        cd .. && rm Catch2 -rf
     - name: Build
       run: |
         cmake --DGENERATE_DOCS=OFF --DENABLE_TESTING=OFF .
