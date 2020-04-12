@@ -21,7 +21,9 @@ jobs:
         cmake -Bbuild -H. -DBUILD_TESTING=OFF
         sudo cmake --build build/ --target install
         cd .. && rm Catch2 -rf
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag vlci
+    - name: Build
+      run: |
+        cmake --DGENERATE_DOCS=OFF --DENABLE_TESTING=OFF .
+        cmake --build .
     - name: Test
-      run: docker run vlci
+      run: ctest .
